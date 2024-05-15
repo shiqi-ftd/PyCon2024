@@ -1,0 +1,42 @@
+https://github.com/rasbt/pycon2024
+
+The Fundamentals of Modern Deep Learning with PyTorch
+
+https://sebastianraschka.com/books/
+
+Making predictions - spam/object detections/license code/…
+
+
+Deep Learning vs Machine Learning (traditional)
+Unstructured vs Structured 
+https://scholar.google.com/citations?user=X4RCC0IAAAAJ&hl=en
+
+
+
+https://lightning.ai/szhong65/vision-model/studios/dl-pycon2024/code
+
+PyTorch:
+https://sebastianraschka.com/pdf/pycon2024/02_pytorch-api_compressed.pdf
+
+ 1 Tensor library 
+
+Mathematically: a generalization of vectors, matrices, etc. Tensor library Computationally: a data container
+
+
+torch.tensor ≈ numpy.array
+
++ GPU support 
++ automatic differentiation support
+
+2. Automatic differentiation engine
+3 . Deep learning library
+
+
+1st playground:
+02_pytorch-api
+
+Fine tune last layers for a pretrained model
+
+2nd tutorial:
+convolutional neural network
+https://sebastianraschka.com/pdf/pycon2024/03_training-dnns_compressed.pdf
