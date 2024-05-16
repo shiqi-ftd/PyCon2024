@@ -70,3 +70,20 @@ message_ref = pn.bind(echo_message, message=message_input.param.value, toggle_up
 
 pn.Column(message_input, toggle, message_ref)
 
+https://github.com/Quansight/ragna-presentations
+
+Key takeaways ✨
+Offline LLMs are powerful, and quantized versions can be quickly run on your local computers
+Retrieval-augmented generation (RAG) helps improve the effectiveness of LLMs
+You can create document inquiry chat experiments and applications with orchestration tools like Ragna & Panel
+Resources 📚
+🐙 Review the tutorial material on GitHub: Quansight/ragna-presentations
+
+🤗 Keep up with trending open LLMs on the Hugging Face Leaderboard
+
+⛵️ Learn more about Ragna and how it compares to other libraries like LangChain
+
+📈 Learn more about Panel and check out the example app gallery
+
+🗂️ Check out quantization and inference libraries like exllamav2, llama.cpp and ollama
+
