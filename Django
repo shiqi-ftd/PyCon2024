@@ -1,0 +1,16 @@
+Django Models
+
+https://felipedemorais.com.br/building-your-first-api-with-django-and-django-rest-framework/
+
+* Create venv:
+python -m venv my_venv
+source my_venv/bin/activate
+
+
+-django==5.0.6
++django==4
+-djangorestframework==3.15.1
++djangorestframework==3.13
+
+## already done 
+./manage.py startapp music

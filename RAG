@@ -1,0 +1,72 @@
+Run LLM in offline mode
+
+llama3 
+Build a WebApplication
+
+pycon-pycon-ragna
+
+ "Quantization" -  
+ 模型量化（Quantization）是一种用来减少模型大小和提高模型运行速度的技术。
+ 最簡單的方式就是把模型的浮點數換成整數，也就是「浮點(float)運算」轉換成「定點(integer)運算」，也就是這篇要講的量化(Quantization)。
+
+> Quantization is a technique to reduce the computational and memory costs of running inference by representing the weights and activations with low-precision data types like 8-bit integer (int8) instead of the usual 32-bit floating point (float32).
+> 
+> Reducing the number of bits means the resulting model requires less memory storage, consumes less energy (in theory), and operations like matrix multiplication can be performed much faster with integer arithmetic. It also allows to run models on embedded devices, which sometimes only support integer data types.
+
+In its original float32 representation, an LLM needs roughly 4 GB of VRAM for each billion of parameters. For example, LLama3-8B with its roughly 8 billion parameters needs 32GB to load the weights.
+
+By quantizing the float32 representation into a lower number `n` of bits per weight (bpw), this can be drastically reduced to `n / 8` GB of VRAM for each billion of parameters. For example, with 6 bpw, which is what we are going to use, we only need 6 GB to load the weights.
+
+There are a number of quantization schemes / file formats (`exl2`, `gtpq`, `gguf`, `awq`) and libraries (Exllamav2, llama.cpp, AutoGPTQ) to create and use quantized weights. For this tutorial we are going to use Exllamav2 with the corresponding `exl2` weights.
+
+
+Use Llama3 for inference
+Let's run the example inference script.
+https://github.com/turboderp/exllamav2/blob/master/examples/inference.py
+
+随机指标(Stochastics)
+
+Streaming generator vs Regualar generator
+
+"Shutdown kernel"
+
+"Ragna"
+https://github.com/Quansight/ragna
+Open source library for RAG **Orchestration** with a Python API, REST API, and web UI.
+It gives you a convenience tools to quickly build RAG workflows and applications, with any LLM or source storage you prefer.
+
+compare langChain and llamaindex - ragna is simple but easier to use for productionalization?
+
+
+HoloViz and Panel:
+A suite of high-level Python tools that are designed to work together to make visualizing data a breeze, 
+from conducting exploratory data analysis to deploying complex dashboards.
+
+The core HoloViz projects are as follows:
+- [Panel](https://panel.holoviz.org): Create interactive dashboards in Jupyter notebooks or standalone apps
+- [hvPlot](https://hvplot.holoviz.org): Quickly and interactively explore data with a familiar API
+- [HoloViews](https://holoviews.org): Interactive plotting experience
+- [GeoViews](http://geoviews.org): Geographic extension of HoloViews
+- [Datashader](https://datashader.org): Render big data images in a browser
+- [Lumen](https://lumen.holoviz.org/): Construct no-code dashboards from simple YAML specifications
+- [Colorcet](https://colorcet.holoviz.org/): Plot with perceptually based colormaps
+- [Param](https://param.holoviz.org): Declaratively code in Python
+
+
+Panel Basic Intro:
+import panel as pn
+pn.extension()
+
+message_input = pn.widgets.TextInput(value="Hello World!")
+toggle = pn.widgets.Toggle(name = "Toggle Upcase")
+
+def echo_message(message, toggle_upper):
+    ...  # Fill this out
+    if toggle_upper:
+        message = message.upper()
+    return f"<i>{message}</i>"
+
+message_ref = pn.bind(echo_message, message=message_input.param.value, toggle_upper=toggle.param.value)  # Fill this out
+
+pn.Column(message_input, toggle, message_ref)
+
