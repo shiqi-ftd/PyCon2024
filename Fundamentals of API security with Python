@@ -1,0 +1,111 @@
+https://docs.google.com/document/u/0/d/1v518SRw_mgMBLisPjN9HA2dyELXcN6EQIBGfdmrywm4/mobilebasic
+
+https://docs.google.com/document/d/1g_XPypz5rs7BcLij7hRT71F6D_y58rYB3qB-4K5DrV8/edit#heading=h.a98zfblw5wbp
+
+https://github.com/abunuwas/pycon-us-2024
+
+OWASP - The Open Worldwide Application Security Project
+
+Run Spectral against your API:
+npm install @stoplight/spectral-cli
+npm install @stoplight/spectral-owasp-ruleset
+echo 'extends: ["@stoplight/spectral-owasp-ruleset"]' > .spectral.yaml
+npx spectral lint api.yaml
+
+Authentication vs Authorization
+Verify identity vs Verify Permission
+
+crapi API:
+http://crapi.apisec.ai
+
+View Page Source -> Network
+"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhc2Rhc2RAYXNkLmNvbSIsImlhdCI6MTcxNTg4MzE5NSwiZXhwIjoxNzE1OTY5NTk1fQ.jALPGj02ZsGLjei2_13KOACt3FKhs23WCS8EaL9mlwgtxbShtTB4JP2Biv2MYfLbB9dxTuf04Te_w2iOFiYuOg",
+
+Grab a token from ^ and put it into JWT(JSON Web Tokens) - https://jwt.io/
+
+PII leaked:
+PAYLOAD:DATA
+
+{
+  "sub": "asdasd@asd.com", - *need to be hashed*
+  "iat": 1715883195,
+  "exp": 1715969595
+}
+
+Open Authorization(OAuth)
+Multiple flows
+
+python -m venv security
+source security/bin/activate
+
+pip install fastapi==0.111.0
+pip install uvicorn==0.29.0
+pip install python-jose==3.3.0
+pip install sqlalchemy==2.0.30
+pip install requests==2.31.0
+
+http://localhost:8000/login
+
+/token ->
+{
+  "code": "QL2wN5YhotvPlMXcqBg5_CcClvyULuGO5HF9j3zLvO6CA"
+}
+
+Token response:
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldOYXNUR09UVkxlLWV4cVR3NFJaNCJ9.eyJpc3MiOiJodHRwczovL3B5Y29udXMuZXUuYXV0aDAuY29tLyIsInN1YiI6Imdvb2dsZS1vYXV0aDJ8MTAyNzI5Mjk3MTIyMDcwOTc5NTI0IiwiYXVkIjpbImh0dHBzOi8vcHljb24tdXMtMjAyNC1hcGkuY29tIiwiaHR0cHM6Ly9weWNvbnVzLmV1LmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE3MTU4ODU2MTksImV4cCI6MTcxNTk3MjAxOSwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCBvZmZsaW5lX2FjY2VzcyIsImF6cCI6IkpCSGVDQm5pbEJjbGthMmVwZFZNS0c2YUwxMXNvV3RUIiwicGVybWlzc2lvbnMiOltdfQ.bFwR-5Dg7rZwVPd2kVQ06P0itCOqW4iEv7arJrqq3ICKFkLBoHOIATxQD6fwvkSRsOKi8bqvdZRNogFdQi3torjjqk0IDT1R-g0RaQro_-Gf0N-Gz8c1xfR89vzYjUnUg5j_cNO-gY44q_Zdz3IpZ-sE92ux2T90UYCBaM66kG-bQM7tvju8gnwpxFUJ4wXZ3EziJCdfeyYLaY8pjAUf43JLmlqwN-udm8uxLhFaCK0kLdjgH_utjUoj5MojKFdtCO9-PqzDHnJuWvrxoIvCpZaClIDwN-13QkKjGN_LGdRw9P9vljyJq2HAHPdOjFwJmYk491QtAasCnnRcDxrfew",
+  "refresh_token": "5p9qtr9hQHlmCZzOq-j95Fz5WbqWzVOIqD6E8sY099bYM",
+  "id_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldOYXNUR09UVkxlLWV4cVR3NFJaNCJ9.eyJnaXZlbl9uYW1lIjoiU2hpcWkiLCJmYW1pbHlfbmFtZSI6Ilpob25nIiwibmlja25hbWUiOiJ6aG9uZ3NoaXFpMTk5MSIsIm5hbWUiOiJTaGlxaSBaaG9uZyIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NLOXM4Z2hRRmtnWnJ4SG5Fd3RUdkpIYkZoWnhsaHdqN0tCSkR2c09BbjBKM2VDVlE9czk2LWMiLCJsb2NhbGUiOiJlbiIsInVwZGF0ZWRfYXQiOiIyMDI0LTA1LTE2VDE4OjQyOjExLjE1M1oiLCJlbWFpbCI6Inpob25nc2hpcWkxOTkxQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJpc3MiOiJodHRwczovL3B5Y29udXMuZXUuYXV0aDAuY29tLyIsImF1ZCI6IkpCSGVDQm5pbEJjbGthMmVwZFZNS0c2YUwxMXNvV3RUIiwiaWF0IjoxNzE1ODg1NjE5LCJleHAiOjE3MTU5MjE2MTksInN1YiI6Imdvb2dsZS1vYXV0aDJ8MTAyNzI5Mjk3MTIyMDcwOTc5NTI0Iiwic2lkIjoiQy1PM2YwMkpjTWZCZjE0bHZHeU53YTRRUlJ2bm9mblQifQ.dKSoIZi5n2GWCnpaA554-NHuD26mfXa-8IkegBPXLJcyVAKh3rjnuBsrsbANfRhSTYJRwWywIV1yMtYdIpwpjHFirH4d6h37Jbg7LBbrNY1g12ExQiO6uGy4ajZ9L3P5ehKEhMJcT10O6DS7mSs-W-tJl4dRbds0AR_6v1zC-p74BEL8zzpGqg5ipHdrxJd0AkPozRrpURzHeOXjvqV_UsSreVJyP4bU52KAn7lsdfQXw2UDjCxwvrRJncNFTVGbby53P4q5SHRc6M1W3xnmPTu2pAFE3YyVz4_Ko7HHV1NO7jWy5dYxHmk9vWLi2YZtQ-dVretS3V1DB-TNKC1oEQ",
+  "scope": "openid profile email offline_access",
+  "expires_in": 86400,
+  "token_type": "Bearer"
+}
+
+OAuth is a way for one application (the "client") to access data from another application (the "resource server") on behalf of a user, without the client needing to know the user's login credentials.
+
+Here are the key terms:
+Resource Owner: This is the user who owns the data that the client wants to access.
+Resource Server: This is the server that hosts the user's data.
+Client: This is the application that wants to access the user's data.
+Authorization Server: This is the server that authenticates the resource owner and issues access tokens to the client.
+
+There are four main OAuth flows:
+Authorization Code Flow: This is used for server-side applications where the client can securely store a secret. The flow works like this:
+The client sends the resource owner to the authorization server to authenticate and authorize the client.
+If the resource owner grants permission, the authorization server redirects the resource owner back to the client with an authorization code.
+The client exchanges this authorization code with the authorization server for an access token, which it can then use to access the resource server on behalf of the user.
+
+OpenID Connect (OIDC)
+
+
+JWT('JOT') - JSON Web Tokens
+ID tokens: JWTs that contain identifying information about a user. They simply carry the identity of the user, such as their name, email, date of birth, and other details. ID tokens MUST NOT be used to authorize user access to an API. ID tokens are typically issued by OIDC providers after successful login.
+
+Access tokens: JWTs that contain claims about the right of a user to access an API. These are the tokens that we use to authorize user access to an API. Usually, access tokens don’t contain identifying information.
+
+A JWT has three components:
+
+Header: it identifies the document as a JWT and contains metadata, such as the algorithm and the key ID used to sign the token. Nonce
+
+Payload: the set of claims that a) identify a user in ID tokens or b) claim the user's access to the API (access tokens).
+
+Signature: a signature produced by combining the header and the payload. The signature verifies that the JWT is legit. 
+
+
+OWASP’s top 10 API vulnerabilities
+
+Broken Authentication
+
+Broken Object Level Authorization (BOLA) - not directly from Auth level but rather related to the bussiness logic implementation
+
+Broken Object Property Level Authorization - Excessive Data Exposure and Mass Assignment
+
+...
+
+
+
+
+OAuth 2.0 access tokens can be JWTs, but they can also be simple bearer tokens or other formats depending on the implementation.
+OIDC uses JWTs specifically for ID tokens, which contain information about the user's authentication and identity.
+
+
