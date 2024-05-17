@@ -1,0 +1,20 @@
+Dead code
+
+Unused code
+
+Feature Decommisioned / Legacy Code / API Changes / Temporary Debugging / Redundant Code
+
+
+Vulture - dead code detections
+pip install vulture
+vulture [options] PATH...
+- could give false positives (add whitelist)
+- why? = definted codes - used codes, based on AST(Abstract syntax tree)
+
+
+Deadcode Package
+pip install deadcode
+w\ automatic fixing
+deadcode . --fix (--dry)
+
+Meta - petabytes of deprecated data - 104 millions of code

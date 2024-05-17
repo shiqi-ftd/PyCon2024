@@ -1,0 +1,16 @@
+How to verify your external mocks without ever leaving unittest
+
+https://github.com/liz-acosta/testing-strategies-for-python/tree/pycon?utm_campaign=202403-baypiggies&utm_medium=talk&utm_source=slides
+
+unittest.mock
+MagicMock
+https://docs.python.org/3/library/unittest.mock.html
+
+patch[] with autospec - binding object
+@patch - to self-learn
+
+unittest.skip
+@unittest.skip[reason] - based on conditions
+
+Source code:
+https://github.com/liz-acosta/testing-strategies-for-python
