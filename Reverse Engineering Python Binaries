@@ -1,0 +1,43 @@
+Source Code -> CPython Compiler -> Bytecode -> CPython Interpreter
+Source Code: Human-readable Python code.
+CPython Compiler: Converts source code into bytecode (parsing to AST, then generating bytecode).
+Bytecode: Intermediate, low-level code stored in .pyc files.
+CPython Interpreter: Executes the bytecode using a virtual machine.
+
+
+Since the bytecode is already compiled and cached, the compilation step is skipped, reducing the overall time required to start executing the program.
+
+Performance Impact
+First Run: Compilation time + Execution time
+Subsequent Runs: Execution time (since compilation is skipped)
+
+The difference in time will be more noticeable for larger programs where the compilation process is more time-consuming. For small scripts, the difference might be negligible, but it is still present.
+
+Anotomy of a Code Object....
+
+
+__main__                globals             locals                  value stack
+0 LOAD_CONST        __name__ '__main__'     dump <function>           ....
+2 ...   
+4
+6 ....
+
+
+Distributing Python Apps:
+source code   ->   Python Bytecode   -> Executable Binaries
+
+
+Decomplie -> 
+Segmentation        -> break up instructions into statements  (use dis module)
+Statement Translation   ->  Imagine running the bytecode, implement in python
+Control FLow Regnotion      -> 
+
+Put together code with Control FLow
+
+The hard part:
+Python Opcodes keep changing 
+
+
+Automatic Decompiles:
+- Uncompyle6
+- ...
