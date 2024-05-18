@@ -14,3 +14,15 @@ unittest.skip
 
 Source code:
 https://github.com/liz-acosta/testing-strategies-for-python
+
+
+Meet unittest.mock
+From the Python documentation: “unittest.mock is a library for testing in Python. It allows you to replace parts of your system under test with mock objects and make assertions about how they have been used.” 
+The most useful features of the mock library are the classes Mock and MagicMock, and the patch() decorator.
+
+https://dev.to/lizzzzz/mock-it-till-you-make-it-mocking-in-pythons-unittest-42d4?utm_campaign=testing-strategies-repo&utm_medium=blog-post&utm_source=github
+
+Examples:
+https://github.com/liz-acosta/testing-strategies-for-python/blob/mocking-tutorial/tests/unit/test_pug.py#L63
+
+
