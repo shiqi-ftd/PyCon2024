@@ -1,0 +1,26 @@
+https://github.com/BruceEckel/functional_error_handling
+
+https://github.com/BruceEckel/functional_error_handling/blob/main/Slides.md
+
+- Coding is about Composability
+
+
+Error Handling
+
+1. Not Part of the Type System
+Don’t know what exceptions will emerge
+The function can start throwing new ones
+C++ and Java tried a shadow type system: exception specifications—didn't work
+2. Conflates Categories
+Recoverable
+Panic: program can't continue
+Treated the same as recoverable
+Unecessary overhead
+3. Exceptions Destroy Partial Calculations
+Computationally wasteful, especially with large calculations
+Makes debugging harder
+
+
+The Functional Approach
+Stop using exceptions
+Functions return a structure combining the answer + potential error
